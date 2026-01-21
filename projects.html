@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projecten - Jop van Oosten</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Jop van Oosten</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="projects.html" class="nav-link active">Projects</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Projects Section -->
+    <section class="projects-page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Mijn Projecten</h1>
+                <p>Een selectie van mijn recente werk en projecten</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Alles</button>
+                <button class="filter-btn" data-filter="web">Web Apps</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+                <button class="filter-btn" data-filter="backend">Backend</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-detailed">
+                <div class="project-detailed" data-category="web">
+                    <div class="project-image-large"></div>
+                    <div class="project-info">
+                        <h2>E-Commerce Platform</h2>
+                        <p class="project-description">Een volledig functioneel e-commerce platform gebouwd met React en Node.js. Inclusief winkelwagen, betalingsverwerking, en een admin dashboard.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Stripe API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-secondary btn-small">Live Demo</a>
+                            <a href="#" class="btn btn-secondary btn-small">Code Repository</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-detailed" data-category="web">
+                    <div class="project-image-large"></div>
+                    <div class="project-info">
+                        <h2>Task Management App</h2>
+                        <p class="project-description">Een productiviteitsapp met real-time synchronisatie en team collaboration features. Gebruikers kunnen taken beheren, teams maken en projecten organiseren.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">TailwindCSS</span>
+                            <span class="tech-tag">WebSocket</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-secondary btn-small">Live Demo</a>
+                            <a href="#" class="btn btn-secondary btn-small">Code Repository</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-detailed" data-category="backend">
+                    <div class="project-image-large"></div>
+                    <div class="project-info">
+                        <h2>Analytics Dashboard</h2>
+                        <p class="project-description">Interactief dashboard voor gegevensvisualisatie en rapportage. Real-time analytics met grafieken, tabellen en export opties.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">D3.js</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">RESTful API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-secondary btn-small">Live Demo</a>
+                            <a href="#" class="btn btn-secondary btn-small">Code Repository</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-detailed" data-category="design">
+                    <div class="project-image-large"></div>
+                    <div class="project-info">
+                        <h2>Brand Identity Design</h2>
+                        <p class="project-description">Complete brand identity ontwerp inclusief logo, kleurenpalette, typografie en design guidelines voor een startup.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">Brand Strategy</span>
+                            <span class="tech-tag">UI Design</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-secondary btn-small">Bekijk Case Study</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-detailed" data-category="web">
+                    <div class="project-image-large"></div>
+                    <div class="project-info">
+                        <h2>Weather Forecast App</h2>
+                        <p class="project-description">Weersapp met real-time gegevens, meerdere locaties en gedetailleerde prognoses. Responsive design voor alle apparaten.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">OpenWeather API</span>
+                            <span class="tech-tag">CSS Grid</span>
+                            <span class="tech-tag">LocalStorage</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-secondary btn-small">Live Demo</a>
+                            <a href="#" class="btn btn-secondary btn-small">Code Repository</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-detailed" data-category="backend">
+                    <div class="project-image-large"></div>
+                    <div class="project-info">
+                        <h2>API Development</h2>
+                        <p class="project-description">RESTful API voor social media applicatie met authenticatie, user management, en real-time notifications.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">JWT Auth</span>
+                            <span class="tech-tag">Socket.io</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-secondary btn-small">Code Repository</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Heb je een project in gedachten?</h2>
+            <p>Laten we erover praten hoe ik kan helpen</p>
+            <a href="contact.html" class="btn btn-primary">Neem Contact Op</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Jop van Oosten. Alle rechten voorbehouden.</p>
+            <div class="social-links">
+                <a href="#" class="social-link">LinkedIn</a>
+                <a href="#" class="social-link">GitHub</a>
+                <a href="#" class="social-link">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

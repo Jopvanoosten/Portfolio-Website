@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Jop van Oosten</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Jop van Oosten</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <div class="page-header">
+                <h1>Neem Contact Op</h1>
+                <p>Heb je vragen of een project in gedachten? Ik hoor het graag!</p>
+            </div>
+
+            <div class="contact-content">
+                <!-- Contact Form -->
+                <div class="contact-form-section">
+                    <h2>Stuur me een bericht</h2>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Naam *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Onderwerp *</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Bericht *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large">Verstuur</button>
+                    </form>
+                    <div class="form-message" id="formMessage"></div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info-section">
+                    <h2>Contactgegevens</h2>
+                    
+                    <div class="contact-info-item">
+                        <div class="info-icon">📧</div>
+                        <div class="info-content">
+                            <h3>Email</h3>
+                            <a href="mailto:jop@example.com">jopvanoosten@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="info-icon">📍</div>
+                        <div class="info-content">
+                            <h3>Locatie</h3>
+                            <p>Delft, Nederland</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="info-icon">💼</div>
+                        <div class="info-content">
+                            <h3>Beschikbaarheid</h3>
+                            <p>Beschikbaar van maandag t/m vrijdag</p>
+                        </div>
+                    </div>
+
+                    <h3 class="social-title">Volg mij</h3>
+                    <div class="social-links-expanded">
+                        <a href="https://www.linkedin.com/in/jop-van-oosten-0036a23a5" class="social-link-large" title="LinkedIn" aria-label="LinkedIn" target="_blank" rel="noopener">
+                            <img src="Afbeeldingen/linkedinlogo.webp" alt="LinkedIn" class="social-icon">
+                        </a>
+                        <a href="https://www.instagram.com/jopvanoosten/" class="social-link-large" title="Instagram" aria-label="Instagram" target="_blank" rel="noopener">
+                            <img src="Afbeeldingen/instagramlogo.png" alt="Instagram" class="social-icon">
+                        </a>
+                        <a href="https://x.com/jopvanoosten" class="social-link-large" title="Twitter" aria-label="Twitter" target="_blank" rel="noopener">
+                            <img src="Afbeeldingen/twitterlogo.webp" alt="Twitter" class="social-icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Jop van Oosten. Alle rechten voorbehouden.</p>
+            <div class="social-links">
+                <a href="#" class="social-link">LinkedIn</a>
+                <a href="#" class="social-link">GitHub</a>
+                <a href="#" class="social-link">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
