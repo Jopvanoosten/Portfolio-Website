@@ -80,27 +80,22 @@ if (contactForm) {
             const formData = new FormData(contactForm);
             const response = await fetch('https://formsubmit.co/jopvanoosten@gmail.com', {
                 method: 'POST',
-                body: formData
+                body: formData,
+                redirect: 'manual'
             });
             
-            if (response.ok) {
-                // Show success message
-                showMessage('Bedankt voor je bericht! Ik zal hem zo snel mogelijk proberen te lezen.', 'success');
-                
-                // Reset form
-                contactForm.reset();
-                
-                // Keep button disabled and green for visual feedback
-                setTimeout(() => {
-                    submitBtn.disabled = false;
-                    submitBtn.style.background = 'linear-gradient(135deg, #2563eb, #1e1e1e)';
-                    submitBtn.textContent = 'Verstuur';
-                }, 3000);
-            } else {
-                showMessage('Er is iets fout gegaan. Probeer alstublieft opnieuw.', 'error');
+            // Show success message regardless of response
+            showMessage('Bedankt voor je bericht! Ik zal hem zo snel mogelijk proberen te lezen.', 'success');
+            
+            // Reset form
+            contactForm.reset();
+            
+            // Keep button disabled and green for visual feedback
+            setTimeout(() => {
                 submitBtn.disabled = false;
                 submitBtn.style.background = 'linear-gradient(135deg, #2563eb, #1e1e1e)';
-            }
+                submitBtn.textContent = 'Verstuur';
+            }, 3000);
         } catch (error) {
             console.error('Form submission error:', error);
             showMessage('Er is iets fout gegaan. Probeer alstublieft opnieuw.', 'error');
