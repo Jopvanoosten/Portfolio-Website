@@ -78,13 +78,12 @@ if (contactForm) {
         try {
             // Send form data using FormSubmit.co
             const formData = new FormData(contactForm);
-            const response = await fetch('https://jopvanoosten.github.io/Portfolio-Website/contact.html', {
+            await fetch('https://formsubmit.co/jopvanoosten@gmail.com', {
                 method: 'POST',
-                body: formData,
-                redirect: 'manual'
+                body: formData
             });
             
-            // Show success message regardless of response
+            // Show success message
             showMessage('Bedankt voor je bericht! Ik zal hem zo snel mogelijk proberen te lezen.', 'success');
             
             // Reset form
