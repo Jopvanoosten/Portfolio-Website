@@ -37,7 +37,7 @@
                 <!-- Contact Form -->
                 <div class="contact-form-section">
                     <h2>Stuur me een bericht</h2>
-                    <form class="contact-form" id="contactForm">
+                    <form class="contact-form" action="https://formsubmit.co/jopvanoosten@gmail.com" method="POST">
                         <div class="form-group">
                             <label for="name">Naam *</label>
                             <input type="text" id="name" name="name" required>
@@ -58,6 +58,8 @@
                             <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
 
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://jopvanoosten.com/contact.html?success=true">
                         <button type="submit" class="btn btn-primary btn-large">Verstuur</button>
                     </form>
                     <div class="form-message" id="formMessage"></div>
@@ -71,7 +73,7 @@
                         <div class="info-icon">📧</div>
                         <div class="info-content">
                             <h3>Email</h3>
-                            <a href="mailto:jop@example.com">jopvanoosten@gmail.com</a>
+                            <a href="mailto:jopvanoosten@gmail.com">jopvanoosten@gmail.com</a>
                         </div>
                     </div>
 
@@ -113,9 +115,9 @@
         <div class="container">
             <p>&copy; 2026 Jop van Oosten. Alle rechten voorbehouden.</p>
             <div class="social-links">
-                <a href="#" class="social-link">LinkedIn</a>
-                <a href="#" class="social-link">GitHub</a>
-                <a href="#" class="social-link">Twitter</a>
+                <a href="https://www.linkedin.com/in/jop-van-oosten-0036a23a5" class="social-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://www.instagram.com/jopvanoosten/" class="social-link" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://x.com/jopvanoosten" class="social-link" target="_blank" rel="noopener noreferrer">Twitter</a>
             </div>
         </div>
     </footer>

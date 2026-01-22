@@ -63,45 +63,19 @@ if (filterButtons.length > 0) {
 
 // Contact Form Handling
 const contactForm = document.getElementById('contactForm');
-const formMessage = document.getElementById('formMessage');
 
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        // Get form values
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const subject = document.getElementById('subject').value;
-        const message = document.getElementById('message').value;
-
-        // Simple validation
-        if (!name || !email || !subject || !message) {
-            showMessage('Vul alstublieft alle velden in.', 'error');
-            return;
+    // Check for success parameter in URL
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success') === 'true') {
+        const formMessage = document.getElementById('formMessage');
+        if (formMessage) {
+            showMessage('Bedankt voor je bericht! Ik zal zo snel mogelijk reageren.', 'success');
+            setTimeout(() => {
+                formMessage.style.display = 'none';
+            }, 5000);
         }
-
-        // Email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            showMessage('Voer een geldig emailadres in.', 'error');
-            return;
-        }
-
-        // Simulate form submission (in production, you'd send this to a server)
-        console.log('Form submitted:', { name, email, subject, message });
-
-        // Show success message
-        showMessage('Bedankt voor je bericht! Ik zal zo snel mogelijk reageren.', 'success');
-
-        // Reset form
-        contactForm.reset();
-
-        // Clear message after 5 seconds
-        setTimeout(() => {
-            formMessage.style.display = 'none';
-        }, 5000);
-    });
+    }
 }
 
 function showMessage(text, type) {
