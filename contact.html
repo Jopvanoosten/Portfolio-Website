@@ -37,7 +37,7 @@
                 <!-- Contact Form -->
                 <div class="contact-form-section">
                     <h2>Stuur me een bericht</h2>
-                    <form class="contact-form" action="https://formsubmit.co/jopvanoosten@gmail.com" method="POST">
+                    <form class="contact-form" id="contactForm" action="https://formsubmit.co/jopvanoosten@gmail.com" method="POST">
                         <div class="form-group">
                             <label for="name">Naam *</label>
                             <input type="text" id="name" name="name" required>
@@ -59,7 +59,7 @@
                         </div>
 
                         <input type="hidden" name="_captcha" value="false">
-                        <button type="submit" class="btn btn-primary btn-large">Verstuur</button>
+                        <button type="submit" id="submitBtn" class="btn btn-primary btn-large">Verstuur</button>
                     </form>
                     <div class="form-message" id="formMessage"></div>
                 </div>

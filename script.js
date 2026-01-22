@@ -63,25 +63,59 @@ if (filterButtons.length > 0) {
 
 // Contact Form Handling
 const contactForm = document.getElementById('contactForm');
+const submitBtn = document.getElementById('submitBtn');
+const formMessage = document.getElementById('formMessage');
 
 if (contactForm) {
-    // Check for success parameter in URL
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('success') === 'true') {
-        const formMessage = document.getElementById('formMessage');
-        if (formMessage) {
-            showMessage('Bedankt voor je bericht! Ik zal zo snel mogelijk reageren.', 'success');
-            setTimeout(() => {
-                formMessage.style.display = 'none';
-            }, 5000);
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        // Disable button and change color to green
+        submitBtn.disabled = true;
+        submitBtn.style.background = '#10b981';
+        submitBtn.textContent = 'Verstuur';
+        
+        try {
+            // Send form data using FormSubmit.co
+            const formData = new FormData(contactForm);
+            const response = await fetch('https://formsubmit.co/jopvanoosten@gmail.com', {
+                method: 'POST',
+                body: formData
+            });
+            
+            if (response.ok) {
+                // Show success message
+                showMessage('Bedankt voor je bericht! Ik zal hem zo snel mogelijk proberen te lezen.', 'success');
+                
+                // Reset form
+                contactForm.reset();
+                
+                // Keep button disabled and green for visual feedback
+                setTimeout(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.style.background = 'linear-gradient(135deg, #2563eb, #1e1e1e)';
+                    submitBtn.textContent = 'Verstuur';
+                }, 3000);
+            } else {
+                showMessage('Er is iets fout gegaan. Probeer alstublieft opnieuw.', 'error');
+                submitBtn.disabled = false;
+                submitBtn.style.background = 'linear-gradient(135deg, #2563eb, #1e1e1e)';
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            showMessage('Er is iets fout gegaan. Probeer alstublieft opnieuw.', 'error');
+            submitBtn.disabled = false;
+            submitBtn.style.background = 'linear-gradient(135deg, #2563eb, #1e1e1e)';
         }
-    }
+    });
 }
 
 function showMessage(text, type) {
-    formMessage.textContent = text;
-    formMessage.className = `form-message ${type}`;
-    formMessage.style.display = 'block';
+    if (formMessage) {
+        formMessage.textContent = text;
+        formMessage.className = `form-message ${type}`;
+        formMessage.style.display = 'block';
+    }
 }
 
 // Smooth scroll for anchor links
