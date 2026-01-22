@@ -78,7 +78,7 @@ if (contactForm) {
         try {
             // Send form data using FormSubmit.co
             const formData = new FormData(contactForm);
-            const response = await fetch('https://formsubmit.co/jopvanoosten@gmail.com', {
+            const response = await fetch('https://jopvanoosten.github.io/Portfolio-Website/contact.html', {
                 method: 'POST',
                 body: formData,
                 redirect: 'manual'
