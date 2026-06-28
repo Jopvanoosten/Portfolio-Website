@@ -423,6 +423,7 @@ body {
     width: 360px;
     height: 360px;
     object-fit: cover;
+    object-position: center 70%;
     border-radius: 20px;
     box-shadow: var(--shadow-lg);
 }
