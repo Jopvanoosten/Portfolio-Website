@@ -26,7 +26,77 @@ document.addEventListener('DOMContentLoaded', () => {
             link.classList.remove('active');
         }
     });
+
+    initBackgroundAudio();
 });
+
+const AUDIO_STORAGE_KEY = 'portfolioAudioMuted';
+const AUDIO_VOLUME = 0.16;
+const AUDIO_ICON_SOUND_ON = '🔊';
+const AUDIO_ICON_MUTED = '🔇';
+
+function initBackgroundAudio() {
+    const audioButton = document.createElement('button');
+    audioButton.className = 'audio-control';
+    audioButton.type = 'button';
+    audioButton.setAttribute('aria-label', 'Mute achtergrondmuziek');
+    audioButton.innerHTML = `<span class="audio-icon">${AUDIO_ICON_SOUND_ON}</span>`;
+    document.body.appendChild(audioButton);
+
+    const AUDIO_TIME_STORAGE_KEY = 'portfolioAudioTime';
+    const storedMuted = localStorage.getItem(AUDIO_STORAGE_KEY);
+    let isMuted = storedMuted === 'true';
+
+    const audio = new Audio('audio/AvantiMindwave.mp3');
+    audio.loop = true;
+    audio.volume = AUDIO_VOLUME;
+    audio.muted = isMuted;
+    audio.preload = 'auto';
+    audio.setAttribute('aria-hidden', 'true');
+    audio.style.display = 'none';
+    document.body.appendChild(audio);
+
+    const storedTime = parseFloat(localStorage.getItem(AUDIO_TIME_STORAGE_KEY));
+    if (!Number.isNaN(storedTime) && storedTime >= 0) {
+        audio.currentTime = storedTime;
+    }
+
+    function updateAudioButton() {
+        const icon = isMuted ? AUDIO_ICON_MUTED : AUDIO_ICON_SOUND_ON;
+        audioButton.innerHTML = `<span class="audio-icon">${icon}</span>`;
+        audioButton.classList.toggle('muted', isMuted);
+        audioButton.setAttribute('aria-label', isMuted ? 'Geluid aanzetten' : 'Geluid dempen');
+    }
+
+    function resumeAudio() {
+        audio.play().catch(() => {
+            // Autoplay mag geblokkeerd zijn tot gebruikerinteractie plaatsvindt.
+        });
+    }
+
+    audioButton.addEventListener('click', () => {
+        isMuted = !isMuted;
+        audio.muted = isMuted;
+        localStorage.setItem(AUDIO_STORAGE_KEY, String(isMuted));
+        updateAudioButton();
+        resumeAudio();
+    });
+
+    const saveAudioTime = () => {
+        if (!audio.paused && !audio.error) {
+            localStorage.setItem(AUDIO_TIME_STORAGE_KEY, String(audio.currentTime));
+        }
+    };
+
+    window.addEventListener('beforeunload', saveAudioTime);
+    const audioTimeInterval = setInterval(saveAudioTime, 1000);
+
+    audio.addEventListener('ended', saveAudioTime);
+    audio.addEventListener('pause', saveAudioTime);
+
+    updateAudioButton();
+    resumeAudio();
+}
 
 // Filter Projects
 const filterButtons = document.querySelectorAll('.filter-btn');
