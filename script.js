@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const AUDIO_STORAGE_KEY = 'portfolioAudioMuted';
-const AUDIO_VOLUME = 0.16;
+const AUDIO_VOLUME = 0.05;
 const AUDIO_ICON_SOUND_ON = '🔊';
 const AUDIO_ICON_MUTED = '🔇';
 
