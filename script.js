@@ -17,7 +17,8 @@ if (hamburger) {
 
 // Active Navigation Link
 document.addEventListener('DOMContentLoaded', () => {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const pathParts = window.location.pathname.split('/').filter(Boolean);
+    const currentPage = pathParts[pathParts.length - 1] || 'index.html';
     document.querySelectorAll('.nav-link').forEach(link => {
         const href = link.getAttribute('href');
         if (href === currentPage) {
@@ -282,7 +283,8 @@ window.addEventListener('scroll', () => {
     // Update the navbar
     document.querySelectorAll('.nav-link').forEach(link => {
         const href = link.getAttribute('href');
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const pathParts = window.location.pathname.split('/').filter(Boolean);
+        const currentPage = pathParts[pathParts.length - 1] || 'index.html';
         
         if (href === currentPage) {
             link.classList.add('active');
