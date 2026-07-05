@@ -46,7 +46,7 @@ function initBackgroundAudio() {
 
     const AUDIO_TIME_STORAGE_KEY = 'portfolioAudioTime';
     const storedMuted = localStorage.getItem(AUDIO_STORAGE_KEY);
-    let isMuted = storedMuted === 'true';
+    let isMuted = storedMuted === null ? true : storedMuted === 'true';
 
     const audio = new Audio('audio/AvantiMindwave.mp3');
     audio.loop = true;

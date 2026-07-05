@@ -264,6 +264,8 @@ body {
     overflow: hidden;
     box-shadow: var(--shadow);
     transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card:hover {
@@ -273,7 +275,7 @@ body {
 
 .project-image {
     width: 100%;
-    height: 200px;
+    aspect-ratio: 1920 / 1080;
     object-fit: cover;
     display: block;
 }
