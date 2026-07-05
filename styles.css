@@ -455,11 +455,18 @@ body {
 
 .about-image img,
 .about-image .avatar-large {
-    width: 360px;
-    height: 360px;
+    width: 400px;
+    height: 400px;
     object-fit: cover;
     object-position: center 70%;
     border-radius: 20px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-image img:hover,
+.about-image .avatar-large:hover {
+    transform: scale(1.02);
     box-shadow: var(--shadow-lg);
 }
 
